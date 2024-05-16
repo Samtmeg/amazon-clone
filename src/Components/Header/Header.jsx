@@ -1,11 +1,11 @@
 import React from 'react';
-import classes from './TopHeader.module.css'
+import classes from './Header.module.css'
 import AmazonLogo from '../../assets/amazon_logo.png'
 import { SlLocationPin } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
-
+import LowerHeader from './LowerHeader'
 
 
 function TopHeader () {
@@ -54,6 +54,7 @@ function TopHeader () {
                     </div>
                 </div>
             </div>
+            <LowerHeader />
         </>
     );
 }

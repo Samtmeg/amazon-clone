@@ -1,15 +1,19 @@
 import { useState } from 'react'
 import './App.css'
-import TopHeader from './Components/Header/TopHeader'
-import LowerHeader from './Components/Header/LowerHeader'
+import Header from './Components/Header/Header'
+import CarouselEffect from './Components/Carousel/Carousel'
+import Category from './Components/Category/Category'
+import Product from './Components/Product/Product'
+
 
 function App () {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <>
-        <TopHeader />
-        <LowerHeader />
+        <Header />
+        <CarouselEffect />
+        <Category />
+        <Product />
     </>
   )
 }
