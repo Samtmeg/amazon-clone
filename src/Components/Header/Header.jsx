@@ -6,16 +6,17 @@ import { BsSearch } from "react-icons/bs";
 import { BiCart } from "react-icons/bi";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 import LowerHeader from './LowerHeader'
+import {Link} from "react-router-dom"
 
 
-function TopHeader () {
+function Header () {
     return (
         <>
             <div className ={classes.header_container}>
                 <div className ={classes.header_image}>
-                    <a href="/">
+                    <Link to ="/">
                         <img src = {AmazonLogo} alt="descrAmazon logo" width="100" height="48" />
-                    </a>
+                    </Link>
                 </div>
                 
                 <div className ={classes.header_delivery_add}>
@@ -40,18 +41,18 @@ function TopHeader () {
                         <select><option value="EN">EN</option></select>
 
                     </div>
-                    <div className ={classes.user_account}>
+                    <Link to ="/Auth" className ={classes.user_account}>
                         <p>Hello, Sign in</p>
                         <p className ={classes.bold_text}>Accounts and Lists</p>
-                    </div>
-                    <div className ={classes.user_order}>
+                    </Link>
+                    <Link to ="/Orders" className ={classes.user_order}>
                         <p>Returns</p>
                         <p className ={classes.bold_text}>& Orders</p>
-                    </div>
-                    <div className ={classes.user_cart}>
+                    </Link>
+                    <Link to ="/Cart" className ={classes.user_cart}>
                         <BiCart size={35} />
                         <span>0</span>
-                    </div>
+                    </Link>
                 </div>
             </div>
             <LowerHeader />
@@ -59,4 +60,4 @@ function TopHeader () {
     );
 }
 
-export default TopHeader;
+export default Header;

@@ -73,7 +73,9 @@
     background-color: #000000;
     color: white;
     align-items: center;
+    text-decoration: none;
 }
+
 
 .user_info select{
     background-color: #000000;
@@ -111,3 +113,11 @@
 }
 
 
+.user_account,
+.user_order,
+Link>p,
+Link
+{
+    text-decoration: none;
+    color: white;
+}
