@@ -31,6 +31,7 @@ function Product () {
                     <ProductCard 
                         key = {singleProduct.id}
                         product={singleProduct}
+                        renderAdd = {true}
                     />
                 ))
             }
