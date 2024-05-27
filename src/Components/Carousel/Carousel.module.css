@@ -1,5 +1,6 @@
 .hero__image{
     position:   relative;
+    height: 300px;
 }
 
 .hero__image::before{

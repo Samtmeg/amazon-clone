@@ -8,7 +8,7 @@ function CarouselEffect () {
     return (
         <div>
             <Carousel
-                autoplay={true}
+                autoplay={false}
                 infiniteloop ={true}
                 showIndicators={false}
                 showThumbs={false} 

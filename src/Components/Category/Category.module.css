@@ -1,11 +1,11 @@
 .category__container{
     position:relative;
     margin-top: -10%; 
-    width: 100vw;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    text-align: center;
-    justify-items:center;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    max-width: 1600px;
+    row-gap: 50px;
+    place-items:center;
 }
 
 .category{

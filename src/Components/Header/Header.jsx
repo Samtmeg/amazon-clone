@@ -8,14 +8,15 @@ import "/node_modules/flag-icons/css/flag-icons.min.css";
 import LowerHeader from './LowerHeader'
 import {Link} from "react-router-dom"
 import { DataContext } from "../DataProvider/DataProvider";
+import {auth} from '../../Utility/firebase';
 
 
 function Header () {
-	const [{basket}, dispatch] = useContext(DataContext)
+	const [{user, basket}, dispatch] = useContext(DataContext)
 	const totalItem = basket?.reduce((amount, item) => {
 		return item.amount + amount
 	},0)
-	console.log(basket.length);
+	// console.log(basket.length);
 
     return (
         <section className ={classes.fixed}>
@@ -48,9 +49,20 @@ function Header () {
                         <select><option value="EN">EN</option></select>
 
                     </div>
-                    <Link to ="/Auth" className ={classes.user_account}>
-                        <p>Hello, Sign in</p>
-                        <p className ={classes.bold_text}>Accounts and Lists</p>
+                    <Link to ={!user &&"/Auth"} className ={classes.user_account}>
+                        <div>
+                            {user? (
+                                <>
+                                    <p>Hello {user?.email?.split("@")[0]}</p>
+                                    <span onClick={()=>auth.signOut()}>Sign out</span>
+                                </>
+                            ):(
+                                <>
+                                    <p>Hello, Sign in</p>
+                                    <p className ={classes.bold_text}>Accounts and Lists</p>
+                                </>
+                            )}
+                        </div>
                     </Link>
                     <Link to ="/Orders" className ={classes.user_order}>
                         <p>Returns</p>
